@@ -17,10 +17,10 @@ function App() {
           <Routes>
           <Route path="/" element={ <Home />} />
           <Route path="/Contact" element={ <Formulario /> } />
-          <Route path="/Reserva" element={ <Reservas /> } />
-          <Route path="/Gastronomia" element={ <Lista /> } />
-          <Route path="/Paseo Delta" element={ <Lista /> } />
-          <Route path="/Almuerzo Catamaran" element={ <Lista /> } /> 
+          <Route path="/reservas" element={ <Reservas /> } />
+          <Route path="/gastronomia" element={ <Lista /> } />
+{/*           <Route path="/Paseo Delta" element={ <Lista /> } />
+          <Route path="/Almuerzo Catamaran" element={ <Lista /> } />  */}
           </Routes>
       
       <Footer />

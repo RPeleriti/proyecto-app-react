@@ -8,23 +8,13 @@ import Container from 'react-bootstrap/esm/Container';
     
 function Lista() {
 
-
     const [reserva, setReserva] = useState([])
-
-   /* const config = {
-        headers:{
-            'Content-Type': 'application/json;charset=utf-8',
-        }
-    }*/
-
 
     const handleSubmit = async (e) => {
         alert('¡Reserva confirmada!')
-        
     };     
 
     const handleDelete = (id)=> {
-        console.log(id);
 
         Swal.fire({
             title: '¿Desea eliminar la reserva?',
@@ -38,7 +28,6 @@ function Lista() {
                 Listas();
             } })
     }
-
 
     const Listas = async () => {
         const { data } = await axios.get('proyecto-app-production.up.railway.app/reservas')
@@ -64,19 +53,17 @@ function Lista() {
                 </thead>
                 <tbody>
                     
-                    {reserva.map((reserva, i) => (
-                        <tr key={i}>
-                            <td>{reserva.nombre}</td>
-                            <td>{reserva.cantidad}</td>
-                            <td>{reserva.experiencias}</td>
-                            <td className='BotAccion'>                               
-                                <Button variant="primary" type="submit"onClick={handleSubmit} >Confirmar</Button>
-                                <Button variant="primary" type="submit" onClick={() => handleDelete(reserva._id)}>Eliminar</Button>
-                            
-                            </td>
-                        </tr>
-                    ))}
-
+                {reserva.map((reserva, i) => (
+                    <tr key={i}>
+                        <td>{reserva.nombre}</td>
+                        <td>{reserva.cantidad}</td>
+                        <td>{reserva.experiencias}</td>
+                        <td className='BotAccion'>                               
+                            <Button variant="primary" type="submit"onClick={handleSubmit} >Confirmar</Button>
+                            <Button variant="primary" type="submit" onClick={() => handleDelete(reserva._id)}>Eliminar</Button>
+                        </td>
+                    </tr>
+                ))}
                 </tbody>
             </Table>
         </div>

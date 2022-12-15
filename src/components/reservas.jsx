@@ -39,15 +39,6 @@ function Reservas() {
         Listas()
     }, [])
 
-    /* useEffect(() => {
-        const getExperiencias= async () => {
-            const { data } = await axios.get('http://localhost:9000/experiencias')
-            console.log(data)
-            setExperiecias(data.lista)
-        }
-        getExperiencias()
-    }, [])   */
-
     const handleSubmit = (event) => {
         const form = event.currentTarget;
         if (form.checkValidity() === false) {
@@ -55,7 +46,6 @@ function Reservas() {
             event.stopPropagation();
         }
         else {
-            console.log(inputs.experiencias)
             alert('¡Estamos grabando datos!')
 
             setValidated(true);
