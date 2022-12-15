@@ -11,11 +11,11 @@ function Lista() {
 
     const [reserva, setReserva] = useState([])
 
-    const config = {
+   /* const config = {
         headers:{
             'Content-Type': 'application/json;charset=utf-8',
         }
-    }
+    }*/
 
 
     const handleSubmit = async (e) => {
