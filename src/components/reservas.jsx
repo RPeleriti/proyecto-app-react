@@ -18,7 +18,8 @@ function Reservas() {
     });
 
 
-    const [listas, setListas] = useState([])
+/*     const [listas, setListas] = useState([]) */
+
     const [validated, setValidated] = useState(false);
 
     const config = {
