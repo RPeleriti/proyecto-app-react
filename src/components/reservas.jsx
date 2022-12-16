@@ -30,7 +30,7 @@ function Reservas() {
 
 
     const Listas = async () => {
-    const { data } = await axios.get('backproyectoutn-production.up.railway.app/gastronomia') 
+    const { data } = await axios.get('https://backproyectoutn-production.up.railway.app/gastronomia') 
 /*         const { data } = await axios.get('http://localhost:9000/gastronomia') */
         console.log(data)
         setListas(data.listas)
@@ -51,7 +51,7 @@ function Reservas() {
 
             setValidated(true);
 
-            axios.post("backproyectoutn-production.up.railway.app/reservas", inputs) 
+            axios.post("https://backproyectoutn-production.up.railway.app/reservas", inputs) 
 /*             axios.post("http://localhost:9000/reservas", inputs, config) */
             setInputs({
                 nombre: "",

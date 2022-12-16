@@ -10,6 +10,15 @@ function Lista() {
 
     const [reservas, setReservas] = useState([])
 
+    const Listas = async () => {
+        const { data } = await axios.get('https://backproyectoutn-production.up.railway.app/reservas')
+        setReservas(data.reservas)
+    }
+
+    useEffect(() => {
+        Listas()
+    }, [])   
+
     const handleSubmit = async (e) => {
         alert('¡Reserva confirmada!')
     };     
@@ -23,20 +32,12 @@ function Lista() {
             denyButtonText: `No`,
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete('backproyectoutn-production.up.railway.app/reservas/' + id);
+                axios.delete('https://backproyectoutn-production.up.railway.app/reservas/' + id);
                 Swal.fire('Eliminado', '', 'success');
                 Listas();
             } })
     }
-
-    const Listas = async () => {
-        const { data } = await axios.get('backproyectoutn-production.up.railway.app/reservas')
-        setReservas(data.reservas)
-    }
-
-    useEffect(() => {
-        Listas()
-    }, [])     
+  
 
     return(
         <Container>
