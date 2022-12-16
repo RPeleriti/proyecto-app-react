@@ -28,13 +28,12 @@ function Reservas() {
         }
     }
 
-    
 
     const Listas = async () => {
-        console.log('get gastronomia')
-        const { data } = await axios.get('proyecto-app-production.up.railway.app/gastronomia')
+        const { data } = await axios.get('proyecto-app-production.up.railway.app/gastronomia') 
+/*         const { data } = await axios.get('http://localhost:9000/gastronomia') */
         console.log(data)
-        setListas(data.listas) 
+        setListas(data.listas)
     }
 
     useEffect(() => {
@@ -52,7 +51,8 @@ function Reservas() {
 
             setValidated(true);
 
-            axios.post("proyecto-app-production.up.railway.app/reservas", inputs, config)
+            axios.post("proyecto-app-production.up.railway.app/reservas", inputs, config) 
+/*             axios.post("http://localhost:9000/reservas", inputs, config) */
             setInputs({
                 nombre: "",
                 apellido: "",
@@ -117,7 +117,7 @@ function Reservas() {
                          <Form.Select name="experiencias" aria-label="Default select example" onChange={handleChange}>
                             <option>Seleccione una..</option>
                             {listas.map((lista, i) => (
-                                <option key={i} value={listas.Nombre}>{listas.Nombre} , costo:${listas.Precio}</option>
+                                <option key={i} value={lista.Nombre}>{lista.Nombre} , costo:${lista.Precio}</option>
                             ))}
                         </Form.Select> 
                     </Col>

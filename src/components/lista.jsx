@@ -8,7 +8,7 @@ import Container from 'react-bootstrap/esm/Container';
     
 function Lista() {
 
-    const [reserva, setReserva] = useState([])
+    const [reservas, setReservas] = useState([])
 
     const handleSubmit = async (e) => {
         alert('¡Reserva confirmada!')
@@ -30,8 +30,8 @@ function Lista() {
     }
 
     const Listas = async () => {
-        const { data } = await axios.get('proyecto-app-production.up.railway.app/reserva')
-        setReserva(data.reserva)
+        const { data } = await axios.get('proyecto-app-production.up.railway.app/reservas')
+        setReservas(data.reservas)
     }
 
     useEffect(() => {
@@ -52,7 +52,7 @@ function Lista() {
                 </thead>
                 <tbody>
                     
-                {reserva.map((reserva, i) => (
+                {reservas.map((reserva, i) => (
                     <tr key={i}>
                         <td>{reserva.nombre}</td>
                         <td>{reserva.cantidad}</td>
