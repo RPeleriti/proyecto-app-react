@@ -18,7 +18,7 @@ function Reservas() {
     });
 
 
-    const [lista, setLista] = useState([])
+    const [listas, setListas] = useState([])
     const [validated, setValidated] = useState(false);
 
     const config = {
@@ -32,7 +32,7 @@ function Reservas() {
     const Listas = async () => {
         const { data } = await axios.get('proyecto-app-production.up.railway.app/gastronomia')
         console.log(data)
-        setLista(data.lista)
+        setListas(data.lista)
     }
 
     useEffect(() => {
@@ -114,7 +114,7 @@ function Reservas() {
                         <Form.Label className="">Experiencias</Form.Label>
                         <Form.Select name="experiencias" aria-label="Default select example" onChange={handleChange}>
                             <option>Seleccione una..</option>
-                            {lista.map((lista, i) => (
+                            {listas.map((lista, i) => (
                                 <option key={i} value={lista.Nombre}>{lista.Nombre} , costo:${lista.Precio}</option>
                             ))}
                         </Form.Select>
