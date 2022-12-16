@@ -22,15 +22,15 @@ function Reservas() {
 
     const [validated, setValidated] = useState(false);
 
-    const config = {
+/*     const config = {
         headers: {
             'Content-Type': 'application/json;charset=utf-8',
         }
-    }
+    } */
 
 
     const Listas = async () => {
-        const { data } = await axios.get('backproyectoutn-production.up.railway.app/gastronomia') 
+    const { data } = await axios.get('backproyectoutn-production.up.railway.app/gastronomia') 
 /*         const { data } = await axios.get('http://localhost:9000/gastronomia') */
         console.log(data)
         setListas(data.listas)
@@ -51,7 +51,7 @@ function Reservas() {
 
             setValidated(true);
 
-            axios.post("backproyectoutn-production.up.railway.app/reservas", inputs, config) 
+            axios.post("backproyectoutn-production.up.railway.app/reservas", inputs) 
 /*             axios.post("http://localhost:9000/reservas", inputs, config) */
             setInputs({
                 nombre: "",
@@ -116,9 +116,10 @@ function Reservas() {
                         <Form.Label className="">Experiencias</Form.Label>
                          <Form.Select name="experiencias" aria-label="Default select example" onChange={handleChange}>
                             <option>Seleccione una..</option>
-                            {listas.map((lista, i) => (
-                                <option key={i} value={lista.Nombre}>{lista.Nombre} , costo:${lista.Precio}</option>
-                            ))}
+                            {listas && listas.map((lista, i) => (
+                                <option key={i} value={lista.Nombre}>{lista.Nombre}</option>
+                            ))} 
+                            
                         </Form.Select> 
                     </Col>
                     <Col>
