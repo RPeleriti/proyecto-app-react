@@ -18,7 +18,7 @@ function Reservas() {
     });
 
 
-/*     const [listas, setListas] = useState([]) */
+    const [listas, setListas] = useState([]) 
 
     const [validated, setValidated] = useState(false);
 
@@ -32,9 +32,9 @@ function Reservas() {
 
     const Listas = async () => {
         console.log('get gastronomia')
-/*         const { data } = await axios.get('proyecto-app-production.up.railway.app/gastronomia')
+        const { data } = await axios.get('proyecto-app-production.up.railway.app/gastronomia')
         console.log(data)
-        setListas(data.lista) */
+        setListas(data.listas) 
     }
 
     useEffect(() => {
@@ -114,12 +114,12 @@ function Reservas() {
                 <Row className="mb-3">
                     <Col>
                         <Form.Label className="">Experiencias</Form.Label>
-{/*                         <Form.Select name="experiencias" aria-label="Default select example" onChange={handleChange}>
+                         <Form.Select name="experiencias" aria-label="Default select example" onChange={handleChange}>
                             <option>Seleccione una..</option>
                             {listas.map((lista, i) => (
-                                <option key={i} value={lista.Nombre}>{lista.Nombre} , costo:${lista.Precio}</option>
+                                <option key={i} value={listas.Nombre}>{listas.Nombre} , costo:${listas.Precio}</option>
                             ))}
-                        </Form.Select> */}
+                        </Form.Select> 
                     </Col>
                     <Col>
                         <Form.Label className="">Cantidad</Form.Label>
