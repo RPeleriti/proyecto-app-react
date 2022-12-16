@@ -52,7 +52,7 @@ function Lista() {
                 </thead>
                 <tbody>
                     
-                {reserva && reservas.map((reserva, i) => (
+                {reservas && reservas.map((reserva, i) => (
                     <tr key={i}>
                         <td>{reserva.nombre}</td>
                         <td>{reserva.cantidad}</td>
