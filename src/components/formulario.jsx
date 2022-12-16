@@ -28,7 +28,7 @@ function Formulario() {
       
       setValidated(true);  
 
-      axios.post("proyecto-app-production.up.railway.app/Contact", inputs, config)
+      axios.post("backproyectoutn-production.up.railway.app/Contact", inputs, config)
       setInputs({
         nombre: "",
         apellido:"",

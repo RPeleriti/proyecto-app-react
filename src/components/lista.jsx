@@ -23,14 +23,14 @@ function Lista() {
             denyButtonText: `No`,
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete('proyecto-app-production.up.railway.app/reservas/' + id);
+                axios.delete('backproyectoutn-production.up.railway.app/reservas/' + id);
                 Swal.fire('Eliminado', '', 'success');
                 Listas();
             } })
     }
 
     const Listas = async () => {
-        const { data } = await axios.get('proyecto-app-production.up.railway.app/reservas')
+        const { data } = await axios.get('backproyectoutn-production.up.railway.app/reservas')
         setReservas(data.reservas)
     }
 
