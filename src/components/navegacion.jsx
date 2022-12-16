@@ -13,7 +13,7 @@ function Navegacion() {
           <Nav className="m5px">
             <Nav.Link href="/">Experencies</Nav.Link>
             <Nav.Link href="Contact">Contact</Nav.Link>
-            <NavDropdown title="Reserva" id="basic-nav-dropdown">
+            <NavDropdown title="DropReserva" id="basic-nav-dropdown">
               <NavDropdown.Item href="reservas">Reservas</NavDropdown.Item>
               <NavDropdown.Item href="gastronomia">Carrito Reservas</NavDropdown.Item>
             </NavDropdown>

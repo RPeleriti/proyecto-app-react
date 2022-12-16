@@ -30,8 +30,7 @@ function Lista() {
     }
 
     const Listas = async () => {
-        const { data } = await axios.get('proyecto-app-production.up.railway.app/reservas')
-        console.log(data)
+        const { data } = await axios.get('proyecto-app-production.up.railway.app/reserva')
         setReserva(data.reserva)
     }
 
